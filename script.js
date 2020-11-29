@@ -12,7 +12,7 @@ function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
   var ca = decodedCookie.split(';');
-  
+
   for(var i = 0; i <ca.length; i++) {
     var c = ca[i];
     while (c.charAt(0) == ' ') {
@@ -47,5 +47,22 @@ var cookieTest = getCookie('teste');
   }
 }
 
-verifyModal();
+// verifyModal();
 
+
+//====================================================================/
+
+// O código acima dessa linha só funciona em um servidor, é relativo aos cookies 
+// Ele não é executado em nenhum momento pois comentei a linha 50
+
+//====================================================================/
+
+/**Tarefa #1
+/* Ideia: Fazer com que a div de id #caixa suma ao clickar no botão com id #botao
+/*
+/* Possíveis passos:
+/* Criar uma função para esconder a caixa alterando o display para none
+/* A função vai ser adicionada no click do botao via addEventListener
+/* Testar
+/* Definir um limite de tempo para não ficar o dia todo nisso caso trave
+*/
