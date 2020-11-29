@@ -66,3 +66,9 @@ var cookieTest = getCookie('teste');
 /* Testar
 /* Definir um limite de tempo para não ficar o dia todo nisso caso trave
 */
+
+// var caixaElement = document.querySelector("#caixa");
+
+// console.log(caixaElement);
+
+// caixaElement.style.display = 'none';
