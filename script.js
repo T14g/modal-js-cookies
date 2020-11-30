@@ -1,9 +1,9 @@
 //Cria o cookie
 //Atualmente expira em x minutos
-function setCookie(cname, cvalue , minutos) {
+function setCookie(cname, cvalue, minutos) {
   var d = new Date();
-  d.setTime(d.getTime() + (minutos*60*1000));
-  var expires = "expires="+ d.toUTCString();
+  d.setTime(d.getTime() + (minutos * 60 * 1000));
+  var expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
@@ -13,7 +13,7 @@ function getCookie(cname) {
   var decodedCookie = decodeURIComponent(document.cookie);
   var ca = decodedCookie.split(';');
 
-  for(var i = 0; i <ca.length; i++) {
+  for (var i = 0; i < ca.length; i++) {
     var c = ca[i];
     while (c.charAt(0) == ' ') {
       c = c.substring(1);
@@ -26,24 +26,24 @@ function getCookie(cname) {
 }
 
 //Renderiza a modal
-function renderModal(elementSelector){
+function renderModal(elementSelector) {
   var html = '<h1>Testando 123</h1>';
   var targetElement = document.querySelector(elementSelector);
-  targetElement.insertAdjacentHTML('beforeend',html);
+  targetElement.insertAdjacentHTML('beforeend', html);
 }
 
 //Verifica se deve exibir a modal
-function verifyModal(){
-var cookieTest = getCookie('teste');
+function verifyModal() {
+  var cookieTest = getCookie('teste');
 
-  if(!cookieTest){
-      console.log("Criando");
-      setCookie('teste', 'testando cookie de 2min', 2);
-      renderModal('#container');
-  }else{
-      console.log("Lendo");
-      console.log(cookieTest);
-      
+  if (!cookieTest) {
+    console.log("Criando");
+    setCookie('teste', 'testando cookie de 2min', 2);
+    renderModal('#container');
+  } else {
+    console.log("Lendo");
+    console.log(cookieTest);
+
   }
 }
 
@@ -67,18 +67,17 @@ var cookieTest = getCookie('teste');
 /* Definir um limite de tempo para não ficar o dia todo nisso caso trave
 */
 
-let caixaElement = document.querySelector("#caixa");
+// ES6 -> ES2015 ( transpilador , ex: babel, gulp também faz)
+// funcao = () = > {}, .map, .filter
 
-// console.log(caixaElement);
-
-// caixaElement.style.display = 'none';
-
-function esconderCaixa (){
-  let caixaElement = document.querySelector("#caixa");
+function esconderCaixa() {
+  var caixaElement = document.querySelector("#caixa");
   caixaElement.style.display = 'none';
 }
 
-function addEvento (){
-  let caixaElement = document.querySelector("#caixa");
-  caixaElement.addEventListener('click', esconderCaixa);
+function addEvento() {
+  var botaoElement = document.querySelector("#botao");
+  botaoElement.addEventListener('click', esconderCaixa);
 }
+
+window.addEventListener('load', addEvento);
